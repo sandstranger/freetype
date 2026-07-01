@@ -355,7 +355,7 @@
     {
       FT_Byte*  p;
       FT_Byte*  limit;
-      FT_UInt   local;
+      FT_UInt   pfr_local;
 
 
       if ( FT_STREAM_SEEK( offset ) ||
@@ -374,24 +374,24 @@
 
       flags = PFR_NEXT_BYTE( p );
 
-      local = 0;
+      pfr_local = 0;
       if ( flags & PFR_LOG_STROKE )
       {
-        local++;
+        pfr_local++;
         if ( flags & PFR_LOG_2BYTE_STROKE )
-          local++;
+          pfr_local++;
 
         if ( ( flags & PFR_LINE_JOIN_MASK ) == PFR_LINE_JOIN_MITER )
-          local += 3;
+          pfr_local += 3;
       }
       if ( flags & PFR_LOG_BOLD )
       {
-        local++;
+        pfr_local++;
         if ( flags & PFR_LOG_2BYTE_BOLD )
-          local++;
+          pfr_local++;
       }
 
-      PFR_CHECK( local );
+      PFR_CHECK( pfr_local );
 
       if ( flags & PFR_LOG_STROKE )
       {
