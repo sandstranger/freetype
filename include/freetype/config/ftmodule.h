@@ -16,7 +16,7 @@ FT_USE_MODULE( FT_Driver_ClassRec, t1_driver_class )
 FT_USE_MODULE( FT_Driver_ClassRec, cff_driver_class )
 FT_USE_MODULE( FT_Driver_ClassRec, t1cid_driver_class )
 FT_USE_MODULE( FT_Driver_ClassRec, hvf_driver_class )
-FT_USE_MODULE( FT_Driver_ClassRec, pfr_driver_class )
+/* FT_USE_MODULE( FT_Driver_ClassRec, pfr_driver_class ) -- disabled: MSVC 17.4+ C99 issue, not needed */
 FT_USE_MODULE( FT_Driver_ClassRec, t42_driver_class )
 FT_USE_MODULE( FT_Driver_ClassRec, winfnt_driver_class )
 FT_USE_MODULE( FT_Driver_ClassRec, pcf_driver_class )
